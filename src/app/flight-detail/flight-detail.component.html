@@ -1,0 +1,6 @@
+<div class="flight-detail-container" *ngIf = "details && details.flightName">
+  <p>{{details.flightName}}</p>
+  <p>{{details.origin}} > {{details.destination}}</p>
+  <p>Depart: {{getTimeFromDateTime(details.depart)}}</p>
+  <p>Arrive: {{getTimeFromDateTime(details.arrive)}}</p>
+</div>

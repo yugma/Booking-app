@@ -1,0 +1,30 @@
+<div class="results-container">
+  <div class="result-header" *ngIf="searchCriteria.origin">
+    <div class="col-4">
+      <h2>{{searchCriteria.origin}} > {{searchCriteria.destination}}
+      <span *ngIf="searchCriteria.return"> > {{searchCriteria.origin}}</span></h2>
+    </div>
+    <div class="col-4 float-right sub-header-2">
+      <p *ngIf="searchCriteria.departure">Depart: {{searchCriteria.departure}}</p>
+      <p *ngIf="searchCriteria.return">Return: {{searchCriteria.return}}</p>
+    </div>
+  </div>
+
+  <div class="result-container" *ngFor="let oneWayFlight of flightResults.departureFlight">
+
+    <div *ngFor="let returnFlight of flightResults.returnFlight">
+      <h3> Rs. {{getTotalPrice(oneWayFlight.price, returnFlight.price)}}</h3>
+      <hr>
+      <div class="col-4 flight-detail-container">
+        <flight-detail [details]="oneWayFlight"></flight-detail>
+      </div>
+      <div class="col-4 flight-detail-container">
+        <flight-detail [details]="returnFlight" *ngIf="returnFlight && returnFlight != {}"></flight-detail>
+      </div>
+      <div class="col-4 flight-detail-container">
+        <img src="{{oneWayFlight.logo}}" />
+        <div class="button-class">Book this flight</div>
+      </div>
+    </div>
+  </div>
+</div>

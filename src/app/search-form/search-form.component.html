@@ -1,0 +1,32 @@
+<div class="col-12">
+  <a href="#" id="oneWay" class="nav-bar active" #oneWayTab (click)="tabChange(oneWayTab)">One way</a>
+  <a href="#" id="return" class="nav-bar" #returnTab (click)="tabChange(returnTab)">Return</a>
+</div>
+<form #f="ngForm">
+  <div class="form-container">
+    <input type="text" name="origin" class="input-box" placeholder="Enter Origin City" required [(ngModel)]="searchCriteria.origin"
+    />
+    <input type="text" name="destination" class="input-box" placeholder="Enter Destination City" required [(ngModel)]="searchCriteria.destination"
+    />
+    <input type="date" name="departure" class="input-box" placeholder="Departure Date" required [(ngModel)]="searchCriteria.departure"
+    />
+    <input type="date" name="return" class="input-box" *ngIf="showReturnDate" placeholder="Return Date" required [(ngModel)]="searchCriteria.return"
+    />
+    <select name="passengerCount" class="dropdown-box" autofocus="autofocus" [(ngModel)]="searchCriteria.passengerCount" required>
+      <option value="" selected>--passengers--</option>
+      <option *ngFor="let count of passengerCounter" value="{{count}}">
+        {{count}}
+      </option>
+    </select>
+
+    <button class="button-class" [disabled]="!f.valid" (click)="searchFlights()">
+      Search
+    </button>
+
+  </div>
+</form>
+<div class="range-container">
+  <h4>Refine flight search</h4>
+  <input type="range" min="1000" max="100000" step="100" (change)="changePriceRange()" [(ngModel)]="searchCriteria.priceRange"
+  />
+</div>

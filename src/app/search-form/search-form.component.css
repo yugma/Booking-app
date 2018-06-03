@@ -1,0 +1,64 @@
+.nav-bar{
+    display: inline-block;
+    border: gray solid 1px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 0px;
+    padding: 5px;
+    margin-left:5%;
+    text-decoration: none;
+}
+
+a.active{
+    background-color: #0074d9;
+    border-bottom: 0px;
+    color: white;
+}
+
+div {
+    width:96%;
+    padding:2%;
+    margin: 2%;
+    border: #0074d9 solid 1px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.input-box{
+    width: 85%;
+    padding: 2%;
+    margin-left: 5%;
+    margin-top: 2%;
+    border: #0074d9 solid 2px;
+    border-radius: 5px;
+}
+
+.dropdown-box{
+    width: 91%;
+    padding: 2%;
+    margin-left: 5%;
+    margin-top: 2%;
+    border: #0074d9 solid 2px;
+    border-radius: 5px;
+}
+
+
+.button-class{
+  margin: 5% 0% 5% 30%;
+  text-align: center;
+  padding: 2% 5%;
+  width: 40%;
+  background-color: #0074d9;
+  color: white;
+  border-radius: 5%;
+}
+
+.button-class:disabled{
+  background-color: gray;
+  cursor: default;
+}
+
+.range-container h4, .range-container input{
+  margin-left: 5%;
+}
+
