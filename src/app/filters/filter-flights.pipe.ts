@@ -13,9 +13,11 @@ export class FilterFlightsPipe implements PipeTransform {
     }
     const date = new Date(args.date);
     return flights.filter(flight => {
-      if (flight.origin === args.origin
-      && flight.destination === args.destination
+      if (flight.origin.toLowerCase() === args.origin.toLowerCase()
+      && flight.destination.toLowerCase() === args.destination.toLowerCase()
       && flight.depart.getDate() === date.getDate()
+      && flight.depart.getMonth() === date.getMonth()
+      && flight.depart.getFullYear() === date.getFullYear()
       && flight.price <= args.priceRange
       ) {
         return flight;
