@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data-service.service';
 import { FlightResults } from '../interfaces/flight-results';
 import { SearchCriteria } from '../interfaces/search-criteria';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'search-results',
@@ -11,7 +12,7 @@ import { SearchCriteria } from '../interfaces/search-criteria';
 export class SearchResultsComponent implements OnInit {
   public flightResults: FlightResults;
   public searchCriteria: SearchCriteria;
-  constructor(public dataService: DataService) { }
+  constructor(public dataService: DataService, private routes: Router) { }
 
   ngOnInit() {
 
@@ -29,5 +30,6 @@ export class SearchResultsComponent implements OnInit {
     return returnFlightPrice === undefined ? (flightPrice * +this.searchCriteria.passengerCount) :
     ((flightPrice + returnFlightPrice) * +this.searchCriteria.passengerCount);
   }
+
 
 }
