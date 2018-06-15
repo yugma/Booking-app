@@ -1,3 +1,9 @@
-<p>
-  booking-page works!
-</p>
+<div *ngIf= "bookedFlightDetails">
+<h4>
+  Name: {{bookedFlightDetails.name}}</h4>
+<h4>Amount: {{bookedFlightDetails.amount}}</h4>
+<h4>Origin: {{bookedFlightDetails.origin}}</h4>
+<h4>Destination: {{bookedFlightDetails.destination}}</h4>
+<h4>Departure: {{bookedFlightDetails.departure}}</h4>
+<h4>Arrival: {{bookedFlightDetails.arrival}}</h4>
+</div>
